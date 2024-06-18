@@ -1,73 +1,101 @@
 [
-    {
-      "propertyId": "123456",
-      "propertyName": "APP Name",
-      "propertyThresoldMinutes": {
-        "Monday,Tuesday,Wednesday,Thursday,Friday": {
-          "propertyMinutes": "02"
-        },
-        "Saturday,Sunday": {
-            "propertyMinutes": "05"
+  {
+    "propertyId": "123456",
+    "propertyName": "APP Name",
+    "propertyThresold": {
+      "Monday,Tuesday,Wednesday,Thursday,Friday": {
+        "propertyMinutes": "01",
+        "propertyDimension": "unifiedScreenName",
+        "propertyMetric": "screenPageViews"
+      },
+      "Saturday,Sunday": {
+        "propertyMinutes": "05",
+        "propertyDimension": "unifiedScreenName",
+        "propertyMetric": "screenPageViews"
+      }
+    },
+    "emailConfig": {
+      "Monday,Tuesday,Wednesday,Thursday,Friday": {
+        "smtpChannel": "smtp.gmail.com",
+        "smtpPort": "587",
+        "smtpUserName": "abc@gmail.com",
+        "smtpUserKey": "abc xyz",
+        "emailFrom": "abc@gmail.com",
+        "emailTo": [
+          "abc@gmail.com"
+        ],
+        "isEmail": true
+      },
+      "Saturday,Sunday": {
+        "smtpChannel": "smtp.gmail.com",
+        "smtpPort": "587",
+        "smtpUserName": "abc@gmail.com",
+        "smtpUserKey": "abc xyz",
+        "emailFrom": "abc@gmail.com",
+        "emailTo": [
+          "abc@gmail.com"
+        ],
+        "isEmail": true
+      }
+    },
+    "trafficThresoldLimit": {
+      "Dashboard": {
+        "check": ">",
+        "thresoldLimit": {
+          "Monday,Tuesday,Wednesday,Thursday,Friday": {
+            "00-05": "05",
+            "05-08": "15",
+            "08-17": "50",
+            "17-21": "15",
+            "21-24": "05"
+          },
+          "Saturday,Sunday": {
+            "00-05": "03",
+            "05-08": "10",
+            "08-17": "25",
+            "17-21": "15",
+            "21-24": "05"
+          }
         }
       },
-      "trafficThresoldLimit": {
-        "Dashboard": {
-          "check": ">",
-          "thresoldLimit": {
-            "Monday,Tuesday,Wednesday,Thursday,Friday": {
-              "00-05": "05",
-              "05-08": "15",
-              "08-17": "50",
-              "17-21": "15",
-              "21-24": "05"
-            },
-            "Saturday,Sunday": {
-              "00-05": "03",
-              "05-08": "10",
-              "08-17": "25",
-              "17-21": "15",
-              "21-24": "05"
-            }
+      "Profile": {
+        "check": ">",
+        "thresoldLimit": {
+          "Monday,Tuesday,Wednesday,Thursday,Friday": {
+            "00-05": "5",
+            "05-08": "5",
+            "08-17": "5",
+            "17-21": "5",
+            "21-24": "5"
+          },
+          "Saturday,Sunday": {
+            "00-05": "5",
+            "05-08": "5",
+            "08-17": "5",
+            "17-21": "5",
+            "21-24": "5"
           }
-        },
-        "Profile": {
-          "check": ">",
-          "thresoldLimit": {
-            "Monday,Tuesday,Wednesday,Thursday,Friday": {
-              "00-05": "5",
-              "05-08": "5",
-              "08-17": "5",
-              "17-21": "5",
-              "21-24": "5"
-            },
-            "Saturday,Sunday": {
-              "00-05": "5",
-              "05-08": "5",
-              "08-17": "5",
-              "17-21": "5",
-              "21-24": "5"
-            }
+        }
+      },
+      "Error": {
+        "check": "<",
+        "thresoldLimit": {
+          "Monday,Tuesday,Wednesday,Thursday,Friday": {
+            "00-05": "5",
+            "05-08": "5",
+            "08-17": "5",
+            "17-21": "5",
+            "21-24": "5"
+          },
+          "Saturday,Sunday": {
+            "00-05": "5",
+            "05-08": "5",
+            "08-17": "5",
+            "17-21": "0",
+            "21-24": "0"
           }
-        },
-        "Error": {
-            "check": "<",
-            "thresoldLimit": {
-              "Monday,Tuesday,Wednesday,Thursday,Friday": {
-                "00-05": "5",
-                "05-08": "5",
-                "08-17": "5",
-                "17-21": "5",
-                "21-24": "5"
-              },
-              "Saturday,Sunday": {
-                "00-05": "5",
-                "05-08": "5",
-                "08-17": "5",
-                "17-21": "0",
-                "21-24": "0"
-              }
-            }
         }
       }
     }
-  ]
+  }
+]
